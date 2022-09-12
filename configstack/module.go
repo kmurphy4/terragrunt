@@ -591,6 +591,7 @@ func FindWhereWorkingDirIsIncluded(terragruntOptions *options.TerragruntOptions,
 			return nil
 		}
 		cfgOptions.LogLevel = terragruntOptions.LogLevel
+		cfgOptions.Env = terragruntOptions.Env
 		if terragruntOptions.TerraformCommand == "destroy" {
 			var hook = NewForceLogLevelHook(logrus.DebugLevel)
 			cfgOptions.Logger.Logger.AddHook(hook)
